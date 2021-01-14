@@ -1,0 +1,14 @@
+In PEX1.c, there was an error on line 166 "FILE filePtr = NULL" should be "FILE *filePtr = NULL"
+
+In PEX1.c line 89, there is an illegal escape sequence error "int NumUniqu/e..." this forward slash is wrong and should be "int NumUnique..."
+
+2 errors left
+
+
+
+
+3 runtime errors left
+
+
+
+4 logic errors
