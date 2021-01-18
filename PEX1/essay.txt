@@ -4,14 +4,15 @@ In PEX1.c line 89, there is an illegal escape sequence error "int NumUniqu/e..."
 
 In WordCloud.c line 30, the singular = sign should be a == sign to avoid assignment within a conditional expresion, this if branch would not work otherwise.
 
+In PEX1.c line 90, there was a warning saying i is uninitialized, which would cause an error in the while loop afterwards, this was fixed by setting i = 0
 
-1 errors left
+0 errors left
 
 
 
 
 0 runtime errors left
-In PEX1.c line 90, there was a warning saying i is uninitialized, which would cause an error in the while loop afterwards, this was fixed by setting i = 0
+In PEX1.c line 85, the malloc was incorrect as it was using sizeof(int) where it should've been sizeof(wordCount)
 In PEX1.c line 270, there was an error saying build world cloud undefined, this was fixed by adding the preproccessor include "WordCloud.h"
 In PEX1.h, there is no header guard which would create a whole bundle of problems to which I do not know them all, this was fixed by adding a typical function header guard.
 

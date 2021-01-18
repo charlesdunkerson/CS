@@ -8,6 +8,7 @@
 
 #include <stdio.h>
 #include "WordCloud.h"
+#include "PEX1.h"
 
 
 int BuildWordCloud(WordCount* argWordCount, STRING argFileName, int argNumWords)
