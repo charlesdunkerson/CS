@@ -5,7 +5,8 @@
  * Purpose:  Code provided for PEX 1 - Debugging a word cloud
  * ===========================================================
  */
-
+#ifndef PEX1_H
+#define PEX1_H
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -134,3 +135,6 @@ void QuickSortWords(WordCount* argWordCount, int argLow, int argHigh);
  * @post array is partitioned
  */
 int QuickSortPartition(WordCount* argWordCount, int argLow, int argHigh);
+
+
+#endif //PEX1_H

@@ -9,7 +9,7 @@
             "type": "cppvsdbg",
             "request": "launch",
             "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
-            "args": [],
+            "args": ["PEX1.exe", "USAFA.txt" ],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
