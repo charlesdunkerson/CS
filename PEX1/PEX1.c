@@ -48,7 +48,7 @@ void RemovePunctuationMakeUpperCase(STRING argWord) {
         if (!isalpha((unsigned char)*src)) {
             /* Skip this character */
             src++;
-        } else if (islower((unsigned char)*src)) {
+        } else if (tolower((unsigned char)*src)) {
             /* Make it lowercase */
             src++;
         } else if (src == dst) {
@@ -114,7 +114,7 @@ WordCount* ReadExclusionFile(STRING argFileName) {
         WordCount* returnWordCount = CreateWordCountArray(numWords);
 
         // read in each word and add it to the array if it isn't already there
-        while (fscanf(filePtr, "%"MAX_WORD_LENGTH_STRING"s", charBuffer) == 1) {
+        while (fscanf(filePtr, "%"MAX_WORD_LENGTH_STRING"s", charBuffer) <= 1) {
             RemovePunctuationMakeUpperCase(charBuffer);
             if (!WordExistsInWordCount(returnWordCount, charBuffer)) {
                 UpdateWordCount(returnWordCount, charBuffer);
