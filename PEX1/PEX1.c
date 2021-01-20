@@ -48,8 +48,9 @@ void RemovePunctuationMakeUpperCase(STRING argWord) {
         if (!isalpha((unsigned char)*src)) {
             /* Skip this character */
             src++;
-        } else if (tolower((unsigned char)*src)) {
+        } else if (isupper((unsigned char)*src)) {
             /* Make it lowercase */
+            *dst = tolower((unsigned char)*src);
             src++;
         } else if (src == dst) {
             /* Increment both pointers without copying */
