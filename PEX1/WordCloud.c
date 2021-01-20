@@ -27,7 +27,7 @@ int BuildWordCloud(WordCount* argWordCount, STRING argFileName, int argNumWords)
 	fprintf(filePtr, "<!DOCTYPE html>\n<html>\n<head>\n<style>\ntext1{\nfont-size: 10px;\ncolor: white;\n}\ntext2{\nfont-size: 20px;\ncolor: blue;\n}\ntext3{\nfont-size: 30px;\ncolor: green;\n}\ntext4{\nfont-size: 40px;\ncolor: yellow;\n}\ntext5{\nfont-size: 50px;\ncolor: orange;\n}\ntext6{\nfont-size: 60px;\ncolor: red;\n}\n</style>\n<title>Word Cloud</title>\n</head>\n<body bgcolor = \"#000000\">\n<center>\n");
 
 	// print the words with the style according to their frequency
-	for (int i = 0; argWordCount[i].word != NULL; i++) {
+	for (int i = 0; i < argNumWords; i++) {
 		if (argWordCount[i].count == 1) {
 			fprintf(filePtr, "<text1>%s</text1>\n", argWordCount[i].word);
 		} else if (argWordCount[i].count == 2) {

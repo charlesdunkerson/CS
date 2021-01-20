@@ -17,5 +17,7 @@ In PEX1.c line 270, there was an error saying build world cloud undefined, this 
 In PEX1.h, there is no header guard which would create a whole bundle of problems to which I do not know them all, this was fixed by adding a typical function header guard.
 
 
-3 logic errors left
+1 logic errors left
 In PEX1.c line 206, there is a logical error where the function does not return anything if the word does not exist in the word count
+In PEX1.c line 51, there is a logical error where the else if branch makes a character lowercase with islower, should be to lower.
+In WordCloud.c line30, the for loop should use the parameter "argNumWords" instead of the searching for NULL thing. 
