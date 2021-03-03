@@ -16,7 +16,7 @@ int BuildWordCloud(WordCount* argWordCount, STRING argFileName, int argNumWords)
 	// open/check to see if file is valid
 	FILE* filePtr = NULL;
 
-	filePtr = fopen(argFileName, "a");
+	filePtr = fopen(argFileName, "w");
 	
 	if(filePtr == NULL)
 	{

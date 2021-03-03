@@ -1,23 +1,24 @@
 In PEX1.c, there was an error on line 166 "FILE filePtr = NULL" should be "FILE *filePtr = NULL"
 
-In PEX1.c line 89, there is an illegal escape sequence error "int NumUniqu/e..." this forward slash is wrong and should be "int NumUnique..."
-
 In WordCloud.c line 30, the singular = sign should be a == sign to avoid assignment within a conditional expresion, this if branch would not work otherwise.
 
-In PEX1.c line 90, there was a warning saying i is uninitialized, which would cause an error in the while loop afterwards, this was fixed by setting i = 0
+In PEX1.c line 270, there was an error saying build world cloud undefined, this was fixed by adding the preproccessor include "WordCloud.h"
 
+In PEX1.c line 177 added return false because the function was not returning anything.
 0 errors left
 
-
+ 
 
 
 0 runtime errors left
 In PEX1.c line 85, the malloc was incorrect as it was using sizeof(int) where it should've been sizeof(wordCount)
-In PEX1.c line 270, there was an error saying build world cloud undefined, this was fixed by adding the preproccessor include "WordCloud.h"
-In PEX1.h, there is no header guard which would create a whole bundle of problems to which I do not know them all, this was fixed by adding a typical function header guard.
+In PEX1.c line 90, there was a warning saying i is uninitialized, which would cause an error in the while loop afterwards, this was fixed by setting i = 0
+In PEX1.h added header guard.
 
+0 logic errors left
 
-1 logic errors left
-In PEX1.c line 206, there is a logical error where the function does not return anything if the word does not exist in the word count
-In PEX1.c line 51, there is a logical error where the else if branch makes a character lowercase with islower, should be to lower.
-In WordCloud.c line30, the for loop should use the parameter "argNumWords" instead of the searching for NULL thing. 
+In PEX1.c line 191 changed to strcpy(argWordCount[i].word, argBuffer)
+In PEX1.h changed definitions from length 5 to length 75
+In PEX1.c line 283, changed return 0 to return 1
+In WordCloud.c changed fopen type from "a" to "w"
+In PEX1.c line 78 changed i = 1 to i +=1.

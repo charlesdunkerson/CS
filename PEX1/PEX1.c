@@ -48,9 +48,9 @@ void RemovePunctuationMakeUpperCase(STRING argWord) {
         if (!isalpha((unsigned char)*src)) {
             /* Skip this character */
             src++;
-        } else if (isupper((unsigned char)*src)) {
+        } else if (islower((unsigned char)*src)) {
             /* Make it lowercase */
-            *dst = tolower((unsigned char)*src);
+            *dst++ = toupper((unsigned char)*src);
             src++;
         } else if (src == dst) {
             /* Increment both pointers without copying */
@@ -75,7 +75,7 @@ void PrintWordsToConsole(WordCount* argWordCount) {
 int NumUniqueWords(WordCount* argWordCount) {
     int i = 0;
     while (argWordCount[i].word != NULL) {
-        i = 1;
+        i += 1;
     }
 
     return i;
@@ -115,7 +115,7 @@ WordCount* ReadExclusionFile(STRING argFileName) {
         WordCount* returnWordCount = CreateWordCountArray(numWords);
 
         // read in each word and add it to the array if it isn't already there
-        while (fscanf(filePtr, "%"MAX_WORD_LENGTH_STRING"s", charBuffer) <= 1) {
+        while (fscanf(filePtr, "%"MAX_WORD_LENGTH_STRING"s", charBuffer) == 1) {
             RemovePunctuationMakeUpperCase(charBuffer);
             if (!WordExistsInWordCount(returnWordCount, charBuffer)) {
                 UpdateWordCount(returnWordCount, charBuffer);
@@ -188,7 +188,7 @@ void UpdateWordCount(WordCount* argWordCount, STRING argBuffer) {
     }
 
     argWordCount[i].word = malloc(MAX_WORD_LENGTH * sizeof(char));
-    argWordCount[i].word = argBuffer;
+    strcpy(argWordCount[i].word, argBuffer);
     argWordCount[i].count = 1;
 }
 
@@ -267,9 +267,9 @@ int main(int argc, char** argv) {
     int numUniqueWords = NumUniqueWords(storyWordMap);
 
     // if an output file is provided build the html word cloud
-    if (argc > 3)
+    if (argc > 3) {
         BuildWordCloud(storyWordMap, argv[3], numUniqueWords);
-
+    }
     // sort the words by frequency, highest at the top
     QuickSortWords(storyWordMap, 0, numUniqueWords);
 

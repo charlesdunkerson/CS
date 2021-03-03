@@ -15,8 +15,8 @@
 #include <ctype.h>
 
 #define STRING char*
-#define MAX_WORD_LENGTH 5
-#define MAX_WORD_LENGTH_STRING "5"
+#define MAX_WORD_LENGTH 75
+#define MAX_WORD_LENGTH_STRING "75"
 
 
 typedef struct {
